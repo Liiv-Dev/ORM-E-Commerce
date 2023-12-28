@@ -9,44 +9,43 @@ class Product extends Model {}
 // set up fields and rules for Product model
 Product.init(
   {
-    // define columns
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      auto_Increment: true,
+    id: { // id column
+      type: DataTypes.INTEGER, // integer data type
+      allowNull: false, // doesn't allow null values
+      primaryKey: true, // set as primary key
+      auto_Increment: true, // uses auto increment
     },
-    product_name: {
-      type: DataTypes.STRING,
+    product_name: { // product_name column
+      type: DataTypes.STRING, // string data type
       allowNull: false,
     },
-    price: {
-      type: DataTypes.DECIMAL,
+    price: { // price column
+      type: DataTypes.DECIMAL, // decimal data type
       allowNull: false,
-      validate: {
+      validate: { // validates that the value is a decimal
         isDecimal:true,
       },
     },
-    stock: {
+    stock: { // stock column
       type: DataTypes.INTEGER,
       allowNull: false,
-      defautValue: 10,
-      validate: {
+      defautValue: 10, // set a default value of 10
+      validate: { // validates that the value is numeric
         isNumeric:true,
       },
     },
-    category_id: {
+    category_id: { // category_id column
       type: DataTypes.INTEGER,
-      references: {
+      references: { // references the category model's id
         model: 'category',
         key: 'id',
       },
     },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'product',
+    sequelize, // imported sequelize connection
+    timestamps: false, // don't automatically create createdAt/updatedAt timestamp fields
+    freezeTableName: true, // don't pluralize name of database table
+    underscored: true, // use underscores instead of camel-casing
+    modelName: 'product', // make it so our model name stays lowercase in the database
   }
 );
 
