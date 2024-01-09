@@ -13,7 +13,7 @@ Product.init(
       type: DataTypes.INTEGER, // integer data type
       allowNull: false, // doesn't allow null values
       primaryKey: true, // set as primary key
-      auto_Increment: true, // uses auto increment
+      autoIncrement: true, // uses auto increment
     },
     product_name: { // product_name column
       type: DataTypes.STRING, // string data type
@@ -29,7 +29,7 @@ Product.init(
     stock: { // stock column
       type: DataTypes.INTEGER,
       allowNull: false,
-      defautValue: 10, // set a default value of 10
+      defaultValue: 10, // set a default value of 10
       validate: { // validates that the value is numeric
         isNumeric:true,
       },
@@ -41,6 +41,8 @@ Product.init(
         key: 'id',
       },
     },
+  },
+  {
     sequelize, // imported sequelize connection
     timestamps: false, // don't automatically create createdAt/updatedAt timestamp fields
     freezeTableName: true, // don't pluralize name of database table
