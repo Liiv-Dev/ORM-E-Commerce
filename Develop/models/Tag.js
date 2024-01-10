@@ -7,14 +7,14 @@ class Tag extends Model {}
 // set up fields and rules for Tag model
 Tag.init(
   {
-    id: { // id column
-      type: DataTypes.INTEGER, // integer data type
-      allowNull: false, // doesn't allow null values
-      primaryKey: true, // set as primary key
-      auto_Increment: true, // uses auto increment
+    id: {
+      type: DataTypes.INTEGER, // use the special Sequelize DataTypes object provide what type of data it is
+      allowNull: false, // equivalent of SQL's NOT NULL option
+      primaryKey: true, // instruct that this is the Primary Key
+      autoIncrement: true, // turn on auto increment
     },
-    tag_name: { // tag_name column
-      type: DataTypes.STRING, // string data type
+    tag_name: {
+      type: DataTypes.STRING, // use the special Sequelize DataTypes object provide what type of data it is
     },
     },
   {
