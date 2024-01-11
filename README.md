@@ -3,6 +3,8 @@
 # Description
 Challenge is to build the back end for an e-commerce site. Working with Express.js API and configure it to use Sequelize to interact with a MySQL database.
 
+Walkthrough Video: https://www.youtube.com/watch?v=9OPzR45TTMA
+
 ## User Story 
 AS A manager at an internet retail company
 I WANT a back end for my e-commerce website that uses the latest technologies
